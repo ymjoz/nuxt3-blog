@@ -59,6 +59,11 @@ export const HeaderTabs = [
     name: "knowledges",
     url: "/knowledges",
     show: true
+  },
+  {
+    name: "todo",
+    url: "/todo",
+    show: true
   }
 ] as const;
 

@@ -61,6 +61,7 @@ for (const b of [
 export default defineNuxtConfig({
   devtools: { enabled: false },
   telemetry: false,
+
   app: {
     head: {
       meta: [
@@ -79,7 +80,9 @@ export default defineNuxtConfig({
       title: config.title
     }
   },
+
   css: ["~/assets/style/main.scss", "~/node_modules/katex/dist/katex.min.css", "~/node_modules/viewerjs/dist/viewer.css"],
+
   runtimeConfig: {
     public: {
       stickers,
@@ -94,6 +97,7 @@ export default defineNuxtConfig({
       cmtRepCateId: config.CommentDiscussionCategoryId || process.env.CommentDiscussionCategoryId
     }
   },
+
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -108,6 +112,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   experimental: {
     /**
      * Need payload to cache the data from useAsyncData, but why?
@@ -116,6 +121,7 @@ export default defineNuxtConfig({
     // payloadExtraction: false
     inlineSSRStyles: false
   },
+
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   vite: {
@@ -131,6 +137,7 @@ export default defineNuxtConfig({
       // minify: false
     }
   },
+
   hooks: {
     "vite:extendConfig" (config, { isClient }) {
       if (isClient) {
@@ -151,5 +158,7 @@ export default defineNuxtConfig({
       generateSiteMap(nitro.options.output.publicDir);
       generateTimestamp(nitro.options.output.publicDir);
     }
-  }
+  },
+
+  compatibilityDate: "2024-07-22"
 });
